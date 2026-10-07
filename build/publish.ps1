@@ -5,6 +5,6 @@ Set-Location (Join-Path $PSScriptRoot "..")
 foreach ($rid in $Rids) {
   $sc = if ($rid -like "win-*") { "true" } else { "false" }
   Write-Host "==> $rid (self-contained=$sc)"
-  dotnet publish src/Robotron.Avalonia/Robotron.Avalonia.csproj -c Release -r $rid --self-contained $sc -p:DebugType=None -o "publish/$rid"
+  dotnet publish src/AVATron.Avalonia/AVATron.Avalonia.csproj -c Release -r $rid --self-contained $sc -p:DebugType=None -o "publish/$rid"
   Copy-Item README.md, THIRD_PARTY.md "publish/$rid/" -ErrorAction SilentlyContinue
 }

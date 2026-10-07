@@ -26,7 +26,7 @@ Evidence tags used below:
 ## Handoff: next concrete tasks
 
 1. **Validate on Windows.**
-   - Run `build\publish.ps1`, then launch `publish\win-x64\Robotron.exe`.
+   - Run `build\publish.ps1`, then launch `publish\win-x64\AVATron.exe`.
    - Check fullscreen (F11), HiDPI integer scaling, SDL audio and an Xbox pad with hot-plug.
 2. **Gamepad on Linux:** confirm SDL sees the pad while the Avalonia window has focus. The `SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS` hint is already set.
 3. **Fidelity checks against MAME** with a legally owned `robotron` set. Settle these in this order:
@@ -38,13 +38,13 @@ Evidence tags used below:
 
    Then update FIDELITY.md and bump `GameSession.EngineVersion` if the simulation changes.
 4. **Two-player alternating mode** and **gamepad remapping.**
-5. **Rename the product** before any public release (`Shell/Branding.cs`, `DataPaths.FolderName`).
+5. **Clear the product name.** It was renamed to AVATron: 2084 (`Shell/Branding.cs`, `DataPaths.FolderName`); have the name reviewed before any public release.
 
 ## Commands (all verified on Linux aarch64)
 
 ```bash
 dotnet build
 dotnet test
-dotnet run --project src/Robotron.Avalonia -- --windowed
+dotnet run --project src/AVATron.Avalonia -- --windowed
 build/publish.sh linux-arm64
 ```

@@ -44,8 +44,8 @@ Versions are pinned in `Directory.Packages.props`. Licences were read from each 
 
 | Asset | Origin | Licence |
 |---|---|---|
-| All sprites (player, family, every enemy, electrodes, skull, shots, life icon) | Hand-authored for this project as ASCII pixel art in `src/Robotron.Core/Sprites/SpriteLibrary.cs`; sphereoid, quark and prog images are generated procedurally. Only the **bounding sizes** were taken from research; no original image data was viewed or copied | project code |
-| 5×7 pixel font | Hand-authored in `src/Robotron.Avalonia/Rendering/PixelFont.cs` | project code |
+| All sprites (player, family, every enemy, electrodes, skull, shots, life icon) | Hand-authored for this project as ASCII pixel art in `src/AVATron.Core/Sprites/SpriteLibrary.cs`; sphereoid, quark and prog images are generated procedurally. Only the **bounding sizes** were taken from research; no original image data was viewed or copied | project code |
+| 5×7 pixel font | Hand-authored in `src/AVATron.Avalonia/Rendering/PixelFont.cs` | project code |
 | All sound effects | Synthesised at runtime by `Synth`/`SoundBank` (oscillators, LFSR noise, envelopes). No samples, no MAME or ROM audio | project code |
 | Colour values | The arcade DAC's 256-colour space, using levels computed by MAME's resistor model (BSD-3 MAME; facts only). Colour choices and cycling sequences are our own | project code |
 | Wave table (`waves.json`) | Numeric game parameters re-expressed as our own JSON from published analyses of the 1982 program (RESEARCH.md M1/M2). The original program is © 1982 Williams Electronics; **no code or binary data was copied**, only the numbers that describe the game's behaviour | see note |
@@ -56,5 +56,5 @@ Versions are pinned in `Directory.Packages.props`. Licences were read from each 
 - **No ROM, cabinet art, original graphics, original sound data or original text** is included.
 - The original source and the disassemblies that document the game carry **no licence** and are © Williams. They were used only as references for facts.
 - Whether the factual parameter table in `waves.json` is free of claims has **not been legally reviewed**. This repository is **not** cleared for distribution.
-- **"Robotron" and "Robotron: 2084" are trademarks.** The current build uses the name for identification and shows an "unofficial, not affiliated" disclaimer on the title screen. Before any public release, rename the product. All naming lives in `Shell/Branding.cs`, and the data folder name in `DataPaths.FolderName`.
+- **"Robotron" and "Robotron: 2084" are trademarks.** The product has been renamed **AVATron: 2084**, and the old name no longer appears in the game's UI, window title, executable or data folder. The docs still name the original game when describing what is recreated. The title screen also shows an "unofficial, not affiliated" disclaimer. Whether "AVATron: 2084" (keeping "2084" and the "-tron" ending) is far enough from the original mark has **not been legally reviewed**. All naming lives in `Shell/Branding.cs`, and the data folder name in `DataPaths.FolderName`.
 - None of the GitHub reimplementations surveyed was reused. Several have no licence or appear to ship ripped assets (RESEARCH.md M11).

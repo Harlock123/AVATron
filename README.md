@@ -1,13 +1,14 @@
-# AVATron — an unofficial Robotron: 2084 recreation
+# AVATron: 2084
 
-A faithful-but-modernised recreation of the 1982 Williams Electronics / Vid Kidz arcade game
-**Robotron: 2084**, written in C# on **.NET 10** with an **Avalonia 12** desktop front end.
+**AVATron: 2084** is a twin-stick arena shooter written in C# on **.NET 10** with an **Avalonia 12**
+desktop front end. It faithfully recreates the gameplay of the 1982 Williams Electronics / Vid Kidz
+arcade game *Robotron: 2084*, with optional modernisations.
 
 > Unofficial fan project. Not affiliated with or endorsed by Williams Electronics, WMS Industries,
-> Midway, Warner Bros. or the original authors. "Robotron" is a trademark of its owner. All graphics
-> and sounds in this repository are original work (see [THIRD_PARTY.md](THIRD_PARTY.md)); no ROM data
-> is included. Product naming is isolated in `src/Robotron.Avalonia/Shell/Branding.cs` so it can be
-> replaced before any distribution.
+> Midway, Warner Bros. or the original authors. "Robotron" is a trademark of its owner and is used
+> here only to describe the game being recreated. All graphics and sounds in this repository are
+> original work (see [THIRD_PARTY.md](THIRD_PARTY.md)); no ROM data is included. Product naming lives
+> in `src/AVATron.Avalonia/Shell/Branding.cs`.
 
 Two presets share one engine:
 
@@ -28,7 +29,7 @@ See [FIDELITY.md](FIDELITY.md) for exactly what differs.
 
 ```bash
 dotnet build                       # whole solution
-dotnet run --project src/Robotron.Avalonia
+dotnet run --project src/AVATron.Avalonia
 dotnet test                        # 121 headless tests (engine, persistence, audio mixer, app flow, Avalonia headless UI)
 ```
 
@@ -37,10 +38,10 @@ Command-line options for the game:
 | Option | Effect |
 |---|---|
 | `--windowed` | ignore the saved fullscreen setting |
-| `--no-audio` (or `ROBOTRON_NO_AUDIO=1`) | don't open an audio device |
+| `--no-audio` (or `AVATRON_NO_AUDIO=1`) | don't open an audio device |
 | `--no-gamepad` | don't initialise SDL game controllers |
-| `--data-dir <path>` (or `ROBOTRON_DATA_DIR`) | store settings, scores and suspend files elsewhere |
-| `ROBOTRON_DEBUG_KEYS=1` | log key events to stdout |
+| `--data-dir <path>` (or `AVATRON_DATA_DIR`) | store settings, scores and suspend files elsewhere |
+| `AVATRON_DEBUG_KEYS=1` | log key events to stdout |
 
 ## Publishing
 
@@ -52,7 +53,7 @@ pwsh build/publish.ps1 -Rids win-x64   # from Windows
 
 | Target | Type | Status |
 |---|---|---|
-| win-x64 | self-contained folder (`Robotron.exe`, about 208 MB, untrimmed) | publishes from Linux; **not yet run on Windows** |
+| win-x64 | self-contained folder (`AVATron.exe`, about 208 MB, untrimmed) | publishes from Linux; **not yet run on Windows** |
 | linux-arm64 | framework-dependent | published and launched on Arch Linux aarch64 |
 | linux-x64 | framework-dependent | publishes; not run |
 | osx-arm64, osx-x64 | framework-dependent | osx-arm64 publishes; not run. There is no `.app` bundle or code signing yet |

@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AVATron.Avalonia/AVATron.Avalonia.csproj" />
+    <Project Path="src/AVATron.Core/AVATron.Core.csproj" />
+    <Project Path="src/AVATron.Infrastructure/AVATron.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AVATron.Tests/AVATron.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -4,13 +4,13 @@
 
 | OS | Folder |
 |---|---|
-| Windows | `%APPDATA%\Robotron2084\` |
-| Linux | `$XDG_CONFIG_HOME/Robotron2084/` (default `~/.config/Robotron2084/`) |
-| macOS | `~/Library/Application Support/Robotron2084/` (the platform's conventional equivalent) |
-| Any | overridden by `--data-dir <path>` or `ROBOTRON_DATA_DIR` |
+| Windows | `%APPDATA%\AVATron\` |
+| Linux | `$XDG_CONFIG_HOME/AVATron/` (default `~/.config/AVATron/`) |
+| macOS | `~/Library/Application Support/AVATron/` (the platform's conventional equivalent) |
+| Any | overridden by `--data-dir <path>` or `AVATRON_DATA_DIR` |
 
 ```
-Robotron2084/
+AVATron/
   settings.json
   slot1/ highscores-classic.json  highscores-modern.json  suspend-modern.json
   slot2/ …

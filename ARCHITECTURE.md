@@ -1,8 +1,8 @@
 # Architecture
 
 ```
-Robotron.slnx
-├─ src/Robotron.Core            simulation only (no UI, no I/O, no native code)
+AVATron.slnx
+├─ src/AVATron.Core            simulation only (no UI, no I/O, no native code)
 │   ├─ Input/        TickInput, StickInput, StickQuantizer (8-way / analog / digital)
 │   ├─ Simulation/   Arena, World (one life within a wave), GameSession (game flow), WaveBuilder,
 │   │                GameRules (Classic/Modern policy), GameEvents, FrameSnapshot, XorShiftRandom
@@ -11,17 +11,17 @@ Robotron.slnx
 │   ├─ Waves/        waves.json (embedded, validated), WaveTable (difficulty, Bozo, loop rule)
 │   ├─ Sprites/      Sprite (palette pixels + collision mask), SpriteLibrary (original art)
 │   └─ Scoring/      HighScoreTable
-├─ src/Robotron.Infrastructure  side effects
+├─ src/AVATron.Infrastructure  side effects
 │   ├─ Persistence/  DataPaths, VersionedJsonStore (atomic writes, schema checks), Settings/HighScore/Suspend docs
 │   ├─ Audio/        Synth (offline synthesis), SoundBank (cues and priorities), AudioMixer, SdlAudioOutput / NullAudioOutput
 │   ├─ Input/        SdlGamepadSource (hot-plug) / NoGamepadSource
 │   └─ Platform/     SdlHost (optional SDL2 init; never throws)
-├─ src/Robotron.Avalonia       desktop app (assembly "Robotron")
+├─ src/AVATron.Avalonia       desktop app (assembly "AVATron")
 │   ├─ Shell/        AppController (flow and policy wiring), Menus, Branding
 │   ├─ Rendering/    FrameBuffer (software 292x240 BGRA), GameRenderer, WilliamsPalette, PixelFont
 │   ├─ Input/        InputMapper (keys and pad to TickInput; bindings; edge detection)
 │   └─ GameView, MainWindow, App, Program
-└─ tests/Robotron.Tests        xunit.v3, Avalonia.Headless.XUnit
+└─ tests/AVATron.Tests        xunit.v3, Avalonia.Headless.XUnit
 ```
 
 Dependencies only point downward: Avalonia → Infrastructure → Core. Core has no package dependencies.

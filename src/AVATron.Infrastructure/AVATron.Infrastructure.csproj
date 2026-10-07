@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>AVATron.Infrastructure</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AVATron.Core\AVATron.Core.csproj" />
+    <PackageReference Include="Silk.NET.SDL" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="AVATron.Tests" />
+  </ItemGroup>
+</Project>
