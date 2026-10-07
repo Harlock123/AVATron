@@ -21,6 +21,9 @@ public sealed class AudioMixer
     const int MaxVoices = 12;
 
     readonly ConcurrentQueue<Action> _commands = new();
+    /// Commands waiting for the output thread. Bounded so a missing or stalled output can't grow memory.
+    int _pending;
+    public const int MaxPendingCommands = 512;
     readonly Voice[] _voices = new Voice[MaxVoices];
     Voice _ambient;
     long _stamp;
@@ -31,7 +34,12 @@ public sealed class AudioMixer
     public volatile bool Muted;
     MixMode _mode = MixMode.Polyphonic;
 
-    public MixMode Mode { get => _mode; set => _commands.Enqueue(() => { _mode = value; }); }
+    public MixMode Mode { get => _mode; set => Enqueue(() => { _mode = value; }); }
+
+    /// Commands queued but not yet applied by Render (diagnostics/tests).
+    public int PendingCommands => Volatile.Read(ref _pending);
+
+    void Enqueue(Action a) { Interlocked.Increment(ref _pending); _commands.Enqueue(a); }
 
     /// Number of effect voices sounding after the last Render (diagnostics/tests).
     public int ActiveVoices { get; private set; }
@@ -39,14 +47,15 @@ public sealed class AudioMixer
     public void Play(SoundClip? clip, float gain = 1f)
     {
         if (clip is null || clip.Samples.Length == 0) return;
-        _commands.Enqueue(() => Start(clip, gain));
+        if (Volatile.Read(ref _pending) >= MaxPendingCommands) return;   // no consumer: drop effects
+        Enqueue(() => Start(clip, gain));
     }
 
     public void SetAmbient(SoundClip? clip) =>
-        _commands.Enqueue(() => _ambient = clip is null ? default : new Voice { Clip = clip, Gain = 1f });
+        Enqueue(() => _ambient = clip is null ? default : new Voice { Clip = clip, Gain = 1f });
 
-    public void StopAll() => _commands.Enqueue(() => { Array.Clear(_voices); _ambient = default; });
-    public void StopEffects() => _commands.Enqueue(() => Array.Clear(_voices));
+    public void StopAll() => Enqueue(() => { Array.Clear(_voices); _ambient = default; });
+    public void StopEffects() => Enqueue(() => Array.Clear(_voices));
 
     void Start(SoundClip clip, float gain)
     {
@@ -74,7 +83,7 @@ public sealed class AudioMixer
 
     public void Render(Span<float> output)
     {
-        while (_commands.TryDequeue(out var cmd)) cmd();
+        while (_commands.TryDequeue(out var cmd)) { Interlocked.Decrement(ref _pending); cmd(); }
         output.Clear();
         if (Muted) return;
         float fx = MasterVolume * EffectsVolume, amb = MasterVolume * AmbientVolume;

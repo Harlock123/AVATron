@@ -107,3 +107,29 @@ public class RenderingTests
         Assert.True(a.Pixels.Count(p => p != 0xFF000000) > b.Pixels.Count(p => p != 0xFF000000));
     }
 }
+
+public class PhaseRenderingTests
+{
+    [Fact]
+    public void Wave_clear_marquee_and_game_over_render()
+    {
+        var g = TestSupport.NewGame(2, GameRules.Classic with { LivesPerGame = 1 });
+        TestSupport.SkipIntro(g);
+        foreach (var e in g.World.Enemies) e.Dead = true;
+        for (int t = 0; t < 20 && g.Phase != GamePhase.WaveCleared; t++) g.Tick(Robotron.Core.Input.TickInput.None);
+        Assert.Equal(GamePhase.WaveCleared, g.Phase);
+        for (int t = 0; t < 30; t++) g.Tick(Robotron.Core.Input.TickInput.None);
+        var snap = new FrameSnapshot(); FrameSnapshot.Fill(g, snap);
+        var fb = new FrameBuffer(GameRenderer.Width, GameRenderer.Height);
+        new GameRenderer().Render(snap, fb, new GameRenderOptions());
+        Assert.Contains(fb.Pixels, p => p != 0xFF000000);   // rings + "WAVE 1 COMPLETED"
+
+        for (int t = 0; t < 2000 && g.Phase != GamePhase.Playing; t++) g.Tick(Robotron.Core.Input.TickInput.None);
+        g.World.Enemies.Add(new Robotron.Core.Entities.Grunt { X = g.World.Player.X, Y = g.World.Player.Y, StepTimer = 999 });
+        for (int t = 0; t < GameSession.DeathFrames + 5; t++) g.Tick(Robotron.Core.Input.TickInput.None);
+        Assert.Equal(GamePhase.GameOver, g.Phase);
+        FrameSnapshot.Fill(g, snap);
+        new GameRenderer().Render(snap, fb, new GameRenderOptions());
+        Assert.Contains(fb.Pixels, p => p == WilliamsPalette.Rgb(7, 0, 0));   // red GAME OVER text
+    }
+}
