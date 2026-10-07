@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="Avalonia.Headless.XUnit" />
+    <PackageReference Include="Avalonia.Skia" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Robotron.Core\Robotron.Core.csproj" />
+    <ProjectReference Include="..\..\src\Robotron.Infrastructure\Robotron.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Robotron.Avalonia\Robotron.Avalonia.csproj" />
+  </ItemGroup>
+</Project>

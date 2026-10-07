@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Robotron.Infrastructure</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Robotron.Core\Robotron.Core.csproj" />
+    <PackageReference Include="Silk.NET.SDL" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Robotron.Tests" />
+  </ItemGroup>
+</Project>

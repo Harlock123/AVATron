@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Robotron.Avalonia/Robotron.Avalonia.csproj" />
+    <Project Path="src/Robotron.Core/Robotron.Core.csproj" />
+    <Project Path="src/Robotron.Infrastructure/Robotron.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Robotron.Tests/Robotron.Tests.csproj" />
+  </Folder>
+</Solution>
