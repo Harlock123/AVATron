@@ -1,6 +1,6 @@
 # Milestone status
 
-Status as of 2026-10-07. All observations were made on **Linux aarch64** (Arch VM, Hyprland/XWayland, PipeWire). Nothing has been run on Windows or macOS.
+Status as of 2026-10-07. All observations of the running game were made on **Linux aarch64** (Arch VM, Hyprland/XWayland, PipeWire). On Windows and macOS only the automated tests have run (GitHub Actions); the game itself hasn't been launched there.
 
 **Legend:**
 - ✅ done
@@ -15,7 +15,7 @@ Evidence tags used below:
 | # | Milestone | State | Notes |
 |---|---|---|---|
 | 1 | Research and specification | ✅ | RESEARCH.md and `docs/research/` (source ledger, confidence tags), FIDELITY.md (matrix, reference version), open questions. No MAME/ROM runs or video analysis |
-| 2 | Skeleton and engine validation | ✅ | Solution with 4 projects. Avalonia 12.1.3 + SkiaSharp 3.119.4 on net10.0 confirmed **[observed]**. Fixed 60.096 Hz loop **[test]**. Determinism and lifecycle **[test]**. README build steps verified locally. CI workflow written but **not run** |
+| 2 | Skeleton and engine validation | ✅ | Solution with 4 projects. Avalonia 12.1.3 + SkiaSharp 3.119.4 on net10.0 confirmed **[observed]**. Fixed 60.096 Hz loop **[test]**. Determinism and lifecycle **[test]**. README build steps verified locally. GitHub Actions CI passes build and 132 tests on Windows, Ubuntu and macOS **[test]** |
 | 3 | Core gameplay | ✅ | Twin-stick keyboard **[test][observed]**. Shots: cadence, 4-shot cap, 6 px/frame, wall death **[test]**. Hard walls **[test]**. Grunts **[test][observed]**. Score and lives HUD **[observed]**. Death, restart and game over **[test]**. Wave start/clear **[test]**. Gamepad **[untested]**: no device available |
 | 4 | Complete enemy roster | ✅ | Hulk, Brain, Prog, Cruise missile, Sphereoid, Enforcer, Spark, Quark, Tank, Shell, Electrode and the family, each with the cited behaviour **[test]**. All 40 table waves plus the loop build and run **[test]** |
 | 5 | Full wave system and scoring | ✅ | Complete 40-wave data with the 21–40 loop, difficulty and Bozo **[test]**. All point values, extra man, rescue ladder **[test]**. Initials entry and high-score table **[test]**. Wave-start presentation **[observed]**; wave-clear marquee and game-over rendering **[test]** |

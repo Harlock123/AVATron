@@ -7,7 +7,7 @@
 - **macOS:** `osx-arm64` publishes, but it is not run, not bundled as a `.app`, and not signed or notarised. Gatekeeper will block it unless you allow it manually.
 - **linux-x64:** published, not run.
 - **Windows package size:** 208 MB, because trimming hasn't been attempted. Avalonia supports trimming with compiled bindings; this needs testing.
-- **No CI pipeline has been run.** `.github/workflows/ci.yml` is provided but has never executed.
+- **CI covers build and tests only.** GitHub Actions builds and runs all 132 tests on Windows, Ubuntu and macOS, and the first run (2026-10-07) passed everywhere. That includes the headless Avalonia window tests, but CI never launches the real game, audio or gamepad on those platforms.
 
 ## Input
 

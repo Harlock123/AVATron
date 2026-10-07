@@ -1,4 +1,4 @@
-# NOTE: provided for convenience; this workflow has not been executed yet (see KNOWN_ISSUES.md).
+# Builds and runs the full test suite on Windows, Ubuntu and macOS.
 name: ci
 on: [push, pull_request]
 jobs:
