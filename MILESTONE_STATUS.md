@@ -38,7 +38,7 @@ Evidence tags used below:
 
    Then update FIDELITY.md and bump `GameSession.EngineVersion` if the simulation changes.
 4. **Two-player alternating mode** and **gamepad remapping.**
-5. **Clear the product name.** It was renamed to AVATron: 2084 (`Shell/Branding.cs`, `DataPaths.FolderName`); have the name reviewed before any public release.
+5. **Clear the product name.** It was renamed to AVATron: 2026 (`Shell/Branding.cs`, `DataPaths.FolderName`); have the name reviewed before any public release.
 
 ## Commands (all verified on Linux aarch64)
 

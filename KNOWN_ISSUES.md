@@ -49,7 +49,7 @@ Every item below is labelled **R** in [FIDELITY.md](FIDELITY.md) and needs a MAM
 
 ## Legal and distribution
 
-- **Not cleared for distribution:** see the caveats in [THIRD_PARTY.md](THIRD_PARTY.md). In short, the product is now named AVATron: 2084, but that name hasn't been checked against the original trademark, and the wave numbers derive from analysis of a copyrighted program.
+- **Not cleared for distribution:** see the caveats in [THIRD_PARTY.md](THIRD_PARTY.md). In short, the product is now named AVATron: 2026, but that name hasn't been checked against the original trademark, and the wave numbers derive from analysis of a copyrighted program.
 - **Avalonia build telemetry** is on unless you set `AVALONIA_TELEMETRY_OPTOUT=1`.
 
 ## Minor

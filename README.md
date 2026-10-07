@@ -1,6 +1,6 @@
-# AVATron: 2084
+# AVATron: 2026
 
-**AVATron: 2084** is a twin-stick arena shooter written in C# on **.NET 10** with an **Avalonia 12**
+**AVATron: 2026** is a twin-stick arena shooter written in C# on **.NET 10** with an **Avalonia 12**
 desktop front end. It faithfully recreates the gameplay of the 1982 Williams Electronics / Vid Kidz
 arcade game *Robotron: 2084*, with optional modernisations.
 
