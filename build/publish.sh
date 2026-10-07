@@ -15,5 +15,5 @@ for rid in "${RIDS[@]}"; do
   echo "==> $rid (self-contained=$sc)"
   dotnet publish src/AVATron.Avalonia/AVATron.Avalonia.csproj -c Release -r "$rid" --self-contained "$sc" \
     -p:DebugType=None -o "publish/$rid"
-  cp README.md THIRD_PARTY.md "publish/$rid/" 2>/dev/null || true
+  cp README.md THIRD_PARTY.md LICENSE "publish/$rid/" 2>/dev/null || true
 done

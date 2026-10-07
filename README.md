@@ -95,3 +95,9 @@ Output goes to `publish/<rid>/`.
 | [KNOWN_ISSUES.md](KNOWN_ISSUES.md) | unverified behaviour, platform caveats, deferred work |
 | [MILESTONE_STATUS.md](MILESTONE_STATUS.md) | what is done, tested, observed, and still open |
 | `docs/research/` | the detailed research notes with line-level citations |
+
+## License
+
+The project's own code, art and sounds are released under the [MIT License](LICENSE).
+Third-party components keep their own licences (see [THIRD_PARTY.md](THIRD_PARTY.md)). The MIT licence
+covers only this project's work. It grants no rights to the original *Robotron: 2084* or its trademarks.

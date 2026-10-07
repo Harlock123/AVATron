@@ -1,5 +1,7 @@
 # Third-party notices and asset provenance
 
+This project's own code, sprites, font and synthesised sounds are licensed under the [MIT License](LICENSE). Everything listed below keeps its own licence.
+
 ## Runtime dependencies (shipped with the app)
 
 Versions are pinned in `Directory.Packages.props`. Licences were read from each package's nuspec in the local NuGet cache on 2026-10-07.
