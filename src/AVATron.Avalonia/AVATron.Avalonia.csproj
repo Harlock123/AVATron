@@ -20,5 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="AVATron.Tests" />
+    <InternalsVisibleTo Include="AVATron.Screenshots" />
   </ItemGroup>
 </Project>

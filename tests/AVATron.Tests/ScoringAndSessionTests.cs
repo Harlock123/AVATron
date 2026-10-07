@@ -207,3 +207,21 @@ public class ScoringAndSessionTests
         Assert.Equal(g.StateHash(), resumed.StateHash());
     }
 }
+
+public class WaveProgressTests
+{
+    [Fact]
+    public void Progress_meter_baseline_survives_a_death()
+    {
+        var g = TestSupport.NewGame(21);
+        TestSupport.SkipIntro(g);
+        var grunts = g.World.Enemies.OfType<AVATron.Core.Entities.Grunt>().ToList();
+        for (int i = 0; i < 10; i++) grunts[i].Dead = true;
+        grunts[10].X = g.World.Player.X; grunts[10].Y = g.World.Player.Y;
+        g.Tick(AVATron.Core.Input.TickInput.None);
+        for (int i = 0; i < GameSession.DeathFrames; i++) g.Tick(AVATron.Core.Input.TickInput.None);
+        var snap = new FrameSnapshot(); FrameSnapshot.Fill(g, snap);
+        Assert.Equal(15, snap.BlockingAtStart);        // wave 1's full grunt count, not the 5 survivors
+        Assert.Equal(5, snap.BlockingRemaining);
+    }
+}

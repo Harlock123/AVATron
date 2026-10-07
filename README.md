@@ -10,12 +10,33 @@ arcade game *Robotron: 2084*, with optional modernisations.
 > original work (see [THIRD_PARTY.md](THIRD_PARTY.md)); no ROM data is included. Product naming lives
 > in `src/AVATron.Avalonia/Shell/Branding.cs`.
 
+<p align="center">
+  <img src="docs/images/title.png" width="45%" alt="Title screen: AVATRON: 2026 with the main menu">
+  <img src="docs/images/grunt-swarm.png" width="45%" alt="Wave 9: a swarm of grunts closing in, with hulks and sphereoids">
+</p>
+
 Two presets share one engine:
 
 - **Classic**: the arcade program's rules as documented from its source and from MAME. That means 8-way twin sticks, 60.096 Hz logic, the 40-wave table that loops waves 21–40, factory operator settings, single-channel priority sound and a flicker approximation.
 - **Modern**: the same game with usability changes. It adds analog twin-stick aiming, no flicker, an optional wave-progress meter, an adjustable game speed, suspend/resume, and polyphonic audio.
 
 See [FIDELITY.md](FIDELITY.md) for exactly what differs.
+
+## Screenshots
+
+| | |
+|---|---|
+| ![Wave 1: grunts, star electrodes and the family](docs/images/wave1.png) | ![A wave materialising with the line-spread appear effect](docs/images/wave-intro.png) |
+| **Wave 1**: grunts, electrodes and the last human family | **Wave start**: enemies materialise with a line-spread effect |
+| ![Wave 5: brains hunting the family](docs/images/brains.png) | ![Wave 7: hulks and spinning quarks](docs/images/quark-wave.png) |
+| **Brain wave**: brains reprogram humans into progs | **Quark wave**: quarks drop tanks while hulks roam |
+| ![Modern mode with high score and wave-progress meter](docs/images/modern-hud.png) | ![Meet the robots: enemy roster with point values](docs/images/roster.png) |
+| **Modern mode**: high score and wave-progress meter on the HUD | **Attract mode**: the enemy roster |
+| ![High-score table](docs/images/high-scores.png) | ![Settings screen](docs/images/settings.png) |
+| **Hall of heroes** (sample entries) | **Settings**: audio, display, operator adjustments, key remapping |
+
+Screenshots come straight from the game's renderer at 3× with the arcade's 4:3 pixel shape. Regenerate them with
+`dotnet run --project tools/AVATron.Screenshots`, which uses fixed seeds so the results are reproducible.
 
 ## Prerequisites
 
@@ -30,7 +51,7 @@ See [FIDELITY.md](FIDELITY.md) for exactly what differs.
 ```bash
 dotnet build                       # whole solution
 dotnet run --project src/AVATron.Avalonia
-dotnet test                        # 121 headless tests (engine, persistence, audio mixer, app flow, Avalonia headless UI)
+dotnet test                        # 132 headless tests (engine, persistence, audio mixer, app flow, Avalonia headless UI)
 ```
 
 Command-line options for the game:

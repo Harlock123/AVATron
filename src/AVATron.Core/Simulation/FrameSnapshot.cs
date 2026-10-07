@@ -54,7 +54,7 @@ public sealed class FrameSnapshot
         s.PhaseFrames = g.PhaseFrames; s.PhaseLength = g.PhaseLength; s.BrainWave = g.IsBrainWave;
         s.Tick = g.TickCount;
         s.BlockingRemaining = w.BlockingCount();
-        var c = g.WaveStartCounts;
+        var c = g.WaveFullCounts;   // progress spans deaths: a restart must not reset the meter
         s.BlockingAtStart = c.Grunts + c.Brains + c.Sphereoids + c.Quarks;
         s.PlayerX = w.Player.Px; s.PlayerY = w.Player.Py;
         s.DeathFrames = g.Phase is GamePhase.PlayerDying or GamePhase.GameOver ? (g.Phase == GamePhase.GameOver ? GameSession.DeathFrames : g.PhaseFrames) : 0;

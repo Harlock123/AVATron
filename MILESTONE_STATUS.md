@@ -8,7 +8,7 @@ Status as of 2026-10-07. All observations were made on **Linux aarch64** (Arch V
 - ⏳ not started or deferred
 
 Evidence tags used below:
-- **[test]**: covered by the automated suite (`dotnet test`, 121 passing).
+- **[test]**: covered by the automated suite (`dotnet test`, 132 passing).
 - **[observed]**: seen working in the real app (screenshots or audio capture).
 - **[untested]**: implemented but not exercised.
 

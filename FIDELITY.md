@@ -59,6 +59,10 @@
 
 ## Classic vs Modern at a glance
 
+| Classic | Modern |
+|---|---|
+| ![Classic mode](docs/images/grunt-swarm.png) | ![Modern mode HUD](docs/images/modern-hud.png) |
+
 | | Classic | Modern |
 |---|---|---|
 | Rules, waves, scoring, enemy AI | arcade | **identical** |

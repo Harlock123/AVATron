@@ -39,6 +39,8 @@ layout.
 - Only the first connected pad is used.
 - Gamepad support needs the bundled SDL2 library. If it can't load, the game says so in *Settings* and keyboard play still works.
 
+![Settings screen](docs/images/settings.png)
+
 ## Remapping keys
 
 *Settings → Remap keys…*:

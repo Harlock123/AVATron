@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Renders documentation screenshots straight from the game's renderer (no window, no desktop). -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\AVATron.Avalonia\AVATron.Avalonia.csproj" />
+    <PackageReference Include="SkiaSharp" />
+  </ItemGroup>
+</Project>

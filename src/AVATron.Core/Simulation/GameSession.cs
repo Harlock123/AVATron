@@ -49,7 +49,10 @@ public sealed class GameSession
     public int PhaseFrames { get; private set; }
     public int PhaseLength { get; private set; }
     public World World { get; private set; } = null!;
+    /// Counts placed at the latest (re)start of this wave (survivors only after a death).
     public WaveCounts WaveStartCounts { get; private set; } = null!;
+    /// The wave's full counts from the table, unaffected by deaths (used for progress display).
+    public WaveCounts WaveFullCounts { get; private set; } = null!;
     public bool IsBrainWave { get; private set; }
     public long TickCount { get; private set; }
     public IReadOnlyList<GameEvent> Events => _events;
@@ -157,6 +160,7 @@ public sealed class GameSession
             World.RobSpd = Math.Max(cp.RobSpd, cp.RobMax);
         }
         WaveStartCounts = cp.Remaining ?? def.Counts;
+        WaveFullCounts = def.Counts;
         WaveBuilder.Populate(World, WaveStartCounts);
 
         IsBrainWave = def.Counts.Brains > 0;

@@ -21,6 +21,7 @@ AVATron.slnx
 │   ├─ Rendering/    FrameBuffer (software 292x240 BGRA), GameRenderer, WilliamsPalette, PixelFont
 │   ├─ Input/        InputMapper (keys and pad to TickInput; bindings; edge detection)
 │   └─ GameView, MainWindow, App, Program
+├─ tools/AVATron.Screenshots   regenerates docs/images from the renderer (fixed seeds, no window)
 └─ tests/AVATron.Tests        xunit.v3, Avalonia.Headless.XUnit
 ```
 

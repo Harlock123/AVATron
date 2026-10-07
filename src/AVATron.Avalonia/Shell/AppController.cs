@@ -52,6 +52,9 @@ public sealed class AppController
     public string? Notice { get; private set; }
     public bool IsModern => Settings.Preset == PlayPreset.Modern;
     /// A game started past wave 1: playable as normal, but kept out of the high-score table.
+    /// Documentation screenshots turn the label off; players always see it.
+    internal bool ShowPracticeNote = true;
+
     public bool IsPractice => Session is { Rules.StartWave: > 1 };
 
     /// Step the practice start wave, wrapping 1 <-> MaxStartWave.
@@ -287,7 +290,7 @@ public sealed class AppController
             FrameSnapshot.Fill(Session, _snapshot);
             _snapshot.HighScore = Math.Max(HighScores.TopScore, Session.Score);
             var notes = new List<string>();
-            if (IsPractice) notes.Add("PRACTICE");
+            if (IsPractice && ShowPracticeNote) notes.Add("PRACTICE");
             if (IsModern && Settings.ModernGameSpeed < 1f) notes.Add($"SPEED {Settings.ModernGameSpeed * 100:0}%");
             string? note = notes.Count > 0 ? string.Join(" ", notes) : null;
             _renderer.Render(_snapshot, fb, new GameRenderOptions
