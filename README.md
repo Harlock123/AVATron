@@ -65,22 +65,33 @@ Command-line options for the game:
 | `--data-dir <path>` (or `AVATRON_DATA_DIR`) | store settings, scores and suspend files elsewhere |
 | `AVATRON_DEBUG_KEYS=1` | log key events to stdout |
 
-## Publishing
+## Downloads
+
+Every push to GitHub builds a **self-contained single-file** version for each supported platform. No .NET install is needed: unzip or untar, then run `AVATron` (`AVATron.exe` on Windows).
+
+- **Latest `main` build:** the rolling [`latest` pre-release](../../releases/tag/latest), refreshed on every push to `main`.
+- **Versioned releases:** pushing a tag such as `v0.1.0` creates a proper release.
+- **Any branch:** its builds are attached to that workflow run under *Actions*.
+
+| Platform | File |
+|---|---|
+| Windows x64 / x86 / ARM64 | `AVATron-win-x64.zip`, `-win-x86.zip`, `-win-arm64.zip` |
+| Linux x64 / ARM64 / ARM32 (glibc) | `AVATron-linux-x64.tar.gz`, `-linux-arm64.tar.gz`, `-linux-arm.tar.gz` |
+| macOS Intel / Apple Silicon | `AVATron-osx-x64.tar.gz`, `-osx-arm64.tar.gz` |
+
+- musl-based Linux (e.g. Alpine) isn't offered, because SDL2's package has no musl build.
+- The macOS builds are a plain executable: there's no `.app` bundle and no code signing, so Gatekeeper asks you to allow them.
+- Only the linux-arm64 single file has been launched so far (Arch Linux aarch64, with audio working). The others are built by CI but haven't been run.
+
+## Publishing locally
 
 ```bash
-build/publish.sh                       # all targets
+build/publish.sh                       # all eight targets, same flags as CI
 build/publish.sh win-x64 linux-x64     # selected targets
 pwsh build/publish.ps1 -Rids win-x64   # from Windows
 ```
 
-| Target | Type | Status |
-|---|---|---|
-| win-x64 | self-contained folder (`AVATron.exe`, about 208 MB, untrimmed) | publishes from Linux; **not yet run on Windows** |
-| linux-arm64 | framework-dependent | published and launched on Arch Linux aarch64 |
-| linux-x64 | framework-dependent | publishes; not run |
-| osx-arm64, osx-x64 | framework-dependent | osx-arm64 publishes; not run. There is no `.app` bundle or code signing yet |
-
-Output goes to `publish/<rid>/`.
+Output goes to `publish/<rid>/`: a single `AVATron` executable (about 47 MB for linux-arm64) plus README, THIRD_PARTY and LICENSE.
 
 ## Where things are
 

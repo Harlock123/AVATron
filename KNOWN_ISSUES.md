@@ -6,7 +6,8 @@
 - **Windows:** the self-contained `win-x64` package publishes from Linux but has **never been run on Windows**. The brief named Windows as the first validation platform; that validation is still to do.
 - **macOS:** `osx-arm64` publishes, but it is not run, not bundled as a `.app`, and not signed or notarised. Gatekeeper will block it unless you allow it manually.
 - **linux-x64:** published, not run.
-- **Windows package size:** 208 MB, because trimming hasn't been attempted. Avalonia supports trimming with compiled bindings; this needs testing.
+- **Package size:** each single-file build is about 47 MB (compressed; linux-arm64 measured), because trimming hasn't been attempted. Avalonia supports trimming with compiled bindings; this needs testing.
+- **Single-file extraction:** builds unpack their native libraries (SDL2, Skia, HarfBuzz) into a per-user temp folder on first run. This was checked working on linux-arm64 only.
 - **CI covers build and tests only.** GitHub Actions builds and runs all 132 tests on Windows, Ubuntu and macOS, and the first run (2026-10-07) passed everywhere. That includes the headless Avalonia window tests, but CI never launches the real game, audio or gamepad on those platforms.
 
 ## Input
