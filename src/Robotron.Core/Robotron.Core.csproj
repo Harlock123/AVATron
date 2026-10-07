@@ -5,4 +5,7 @@
   <ItemGroup>
     <InternalsVisibleTo Include="Robotron.Tests" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Waves\waves.json" LogicalName="Robotron.Core.Waves.waves.json" />
+  </ItemGroup>
 </Project>

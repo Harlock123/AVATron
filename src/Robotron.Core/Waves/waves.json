@@ -1,0 +1,127 @@
+{
+ "schemaVersion": 1,
+ "_comment": "Per-wave counts and difficulty parameters for waves 1-40, re-expressed as project data from published analyses of the 1982 arcade program (see RESEARCH.md S1/S3). Waves above 40 reuse 21-40. Parameter units are documented in FIDELITY.md.",
+ "difficultyStepPer256": 14,
+ "parameters": [
+  {
+   "name": "gruntSpeed",
+   "kind": "timer",
+   "min": 10,
+   "max": 20
+  },
+  {
+   "name": "gruntSpeedFloor",
+   "kind": "timer",
+   "min": 3,
+   "max": 10
+  },
+  {
+   "name": "spawnerChildren2x",
+   "kind": "rate",
+   "min": 8,
+   "max": 12
+  },
+  {
+   "name": "enforcerShotTimer",
+   "kind": "timer",
+   "min": 13,
+   "max": 40
+  },
+  {
+   "name": "sphereoidDropTimer",
+   "kind": "timer",
+   "min": 12,
+   "max": 40
+  },
+  {
+   "name": "hulkSleep",
+   "kind": "timer",
+   "min": 5,
+   "max": 9
+  },
+  {
+   "name": "brainMissileTimer",
+   "kind": "timer",
+   "min": 25,
+   "max": 80
+  },
+  {
+   "name": "brainSleep",
+   "kind": "timer",
+   "min": 6,
+   "max": 10
+  },
+  {
+   "name": "tankShotSteps",
+   "kind": "timer",
+   "min": 20,
+   "max": 40
+  },
+  {
+   "name": "tankShellSpeed",
+   "kind": "rate",
+   "min": 160,
+   "max": 255
+  },
+  {
+   "name": "quarkDropTimer",
+   "kind": "timer",
+   "min": 12,
+   "max": 48
+  },
+  {
+   "name": "quarkSpeed",
+   "kind": "rate",
+   "min": 40,
+   "max": 68
+  }
+ ],
+ "bozo": [
+  {"wave": 1, "sphereoidDropTimer": 38, "enforcerShotTimer": 96, "gruntSpeed": 30, "gruntSpeedFloor": 15},
+  {"wave": 2, "sphereoidDropTimer": 38, "enforcerShotTimer": 96, "gruntSpeed": 25, "gruntSpeedFloor": 12},
+  {"wave": 3, "sphereoidDropTimer": 36, "enforcerShotTimer": 48, "gruntSpeed": 20, "gruntSpeedFloor": 10},
+  {"wave": 4, "sphereoidDropTimer": 30, "enforcerShotTimer": 30, "gruntSpeed": 15, "gruntSpeedFloor": 7}
+ ],
+ "waves": [
+  {"wave": 1, "grunts": 15, "electrodes": 5, "mommies": 1, "daddies": 1, "mikeys": 0, "hulks": 0, "brains": 0, "sphereoids": 0, "quarks": 0, "gruntSpeed": 20, "gruntSpeedFloor": 9, "spawnerChildren2x": 10, "enforcerShotTimer": 30, "sphereoidDropTimer": 30, "hulkSleep": 8, "brainMissileTimer": 64, "brainSleep": 8, "tankShotSteps": 32, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 2, "grunts": 17, "electrodes": 15, "mommies": 1, "daddies": 1, "mikeys": 1, "hulks": 5, "brains": 0, "sphereoids": 1, "quarks": 0, "gruntSpeed": 15, "gruntSpeedFloor": 7, "spawnerChildren2x": 10, "enforcerShotTimer": 28, "sphereoidDropTimer": 28, "hulkSleep": 8, "brainMissileTimer": 64, "brainSleep": 8, "tankShotSteps": 32, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 3, "grunts": 22, "electrodes": 25, "mommies": 2, "daddies": 2, "mikeys": 2, "hulks": 6, "brains": 0, "sphereoids": 3, "quarks": 0, "gruntSpeed": 15, "gruntSpeedFloor": 6, "spawnerChildren2x": 10, "enforcerShotTimer": 26, "sphereoidDropTimer": 26, "hulkSleep": 7, "brainMissileTimer": 64, "brainSleep": 8, "tankShotSteps": 32, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 4, "grunts": 34, "electrodes": 25, "mommies": 2, "daddies": 2, "mikeys": 2, "hulks": 7, "brains": 0, "sphereoids": 4, "quarks": 0, "gruntSpeed": 15, "gruntSpeedFloor": 5, "spawnerChildren2x": 10, "enforcerShotTimer": 24, "sphereoidDropTimer": 24, "hulkSleep": 7, "brainMissileTimer": 64, "brainSleep": 8, "tankShotSteps": 32, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 5, "grunts": 20, "electrodes": 20, "mommies": 15, "daddies": 0, "mikeys": 1, "hulks": 0, "brains": 15, "sphereoids": 1, "quarks": 0, "gruntSpeed": 15, "gruntSpeedFloor": 5, "spawnerChildren2x": 10, "enforcerShotTimer": 22, "sphereoidDropTimer": 30, "hulkSleep": 7, "brainMissileTimer": 64, "brainSleep": 8, "tankShotSteps": 32, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 6, "grunts": 32, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 7, "brains": 0, "sphereoids": 4, "quarks": 0, "gruntSpeed": 15, "gruntSpeedFloor": 5, "spawnerChildren2x": 10, "enforcerShotTimer": 20, "sphereoidDropTimer": 20, "hulkSleep": 7, "brainMissileTimer": 40, "brainSleep": 7, "tankShotSteps": 32, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 7, "grunts": 0, "electrodes": 0, "mommies": 4, "daddies": 4, "mikeys": 4, "hulks": 12, "brains": 0, "sphereoids": 0, "quarks": 10, "gruntSpeed": 15, "gruntSpeedFloor": 5, "spawnerChildren2x": 10, "enforcerShotTimer": 18, "sphereoidDropTimer": 18, "hulkSleep": 7, "brainMissileTimer": 40, "brainSleep": 7, "tankShotSteps": 32, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 8, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 0, "gruntSpeed": 15, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 18, "sphereoidDropTimer": 16, "hulkSleep": 6, "brainMissileTimer": 38, "brainSleep": 7, "tankShotSteps": 30, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 9, "grunts": 60, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 4, "brains": 0, "sphereoids": 5, "quarks": 0, "gruntSpeed": 15, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 16, "sphereoidDropTimer": 18, "hulkSleep": 6, "brainMissileTimer": 38, "brainSleep": 7, "tankShotSteps": 30, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 10, "grunts": 25, "electrodes": 20, "mommies": 0, "daddies": 22, "mikeys": 0, "hulks": 0, "brains": 20, "sphereoids": 1, "quarks": 0, "gruntSpeed": 15, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 25, "hulkSleep": 6, "brainMissileTimer": 38, "brainSleep": 7, "tankShotSteps": 30, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 11, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 0, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 6, "brainMissileTimer": 38, "brainSleep": 7, "tankShotSteps": 30, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 12, "grunts": 0, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 13, "brains": 0, "sphereoids": 0, "quarks": 12, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 38, "brainSleep": 7, "tankShotSteps": 30, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 50},
+  {"wave": 13, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 0, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 38, "brainSleep": 7, "tankShotSteps": 30, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 56},
+  {"wave": 14, "grunts": 27, "electrodes": 5, "mommies": 5, "daddies": 5, "mikeys": 5, "hulks": 20, "brains": 0, "sphereoids": 2, "quarks": 0, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 25, "hulkSleep": 5, "brainMissileTimer": 38, "brainSleep": 7, "tankShotSteps": 28, "tankShellSpeed": 176, "quarkDropTimer": 16, "quarkSpeed": 56},
+  {"wave": 15, "grunts": 25, "electrodes": 20, "mommies": 0, "daddies": 0, "mikeys": 22, "hulks": 2, "brains": 20, "sphereoids": 1, "quarks": 0, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 25, "hulkSleep": 5, "brainMissileTimer": 38, "brainSleep": 7, "tankShotSteps": 28, "tankShellSpeed": 176, "quarkDropTimer": 15, "quarkSpeed": 56},
+  {"wave": 16, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 3, "brains": 0, "sphereoids": 5, "quarks": 0, "gruntSpeed": 13, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 38, "brainSleep": 6, "tankShotSteps": 28, "tankShellSpeed": 176, "quarkDropTimer": 15, "quarkSpeed": 56},
+  {"wave": 17, "grunts": 0, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 14, "brains": 0, "sphereoids": 0, "quarks": 12, "gruntSpeed": 13, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 36, "brainSleep": 6, "tankShotSteps": 28, "tankShellSpeed": 176, "quarkDropTimer": 15, "quarkSpeed": 56},
+  {"wave": 18, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 0, "gruntSpeed": 13, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 36, "brainSleep": 6, "tankShotSteps": 28, "tankShellSpeed": 176, "quarkDropTimer": 15, "quarkSpeed": 56},
+  {"wave": 19, "grunts": 70, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 3, "brains": 0, "sphereoids": 5, "quarks": 0, "gruntSpeed": 13, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 18, "hulkSleep": 5, "brainMissileTimer": 36, "brainSleep": 6, "tankShotSteps": 28, "tankShellSpeed": 176, "quarkDropTimer": 15, "quarkSpeed": 56},
+  {"wave": 20, "grunts": 25, "electrodes": 20, "mommies": 8, "daddies": 8, "mikeys": 8, "hulks": 2, "brains": 20, "sphereoids": 2, "quarks": 0, "gruntSpeed": 13, "gruntSpeedFloor": 4, "spawnerChildren2x": 10, "enforcerShotTimer": 14, "sphereoidDropTimer": 20, "hulkSleep": 5, "brainMissileTimer": 36, "brainSleep": 6, "tankShotSteps": 28, "tankShellSpeed": 176, "quarkDropTimer": 15, "quarkSpeed": 56},
+  {"wave": 21, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 0, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 11, "enforcerShotTimer": 15, "sphereoidDropTimer": 14, "hulkSleep": 5, "brainMissileTimer": 32, "brainSleep": 6, "tankShotSteps": 30, "tankShellSpeed": 184, "quarkDropTimer": 14, "quarkSpeed": 56},
+  {"wave": 22, "grunts": 0, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 15, "brains": 0, "sphereoids": 0, "quarks": 12, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 11, "enforcerShotTimer": 15, "sphereoidDropTimer": 14, "hulkSleep": 5, "brainMissileTimer": 32, "brainSleep": 6, "tankShotSteps": 30, "tankShellSpeed": 184, "quarkDropTimer": 14, "quarkSpeed": 56},
+  {"wave": 23, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 0, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 11, "enforcerShotTimer": 15, "sphereoidDropTimer": 14, "hulkSleep": 5, "brainMissileTimer": 32, "brainSleep": 6, "tankShotSteps": 30, "tankShellSpeed": 184, "quarkDropTimer": 14, "quarkSpeed": 56},
+  {"wave": 24, "grunts": 0, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 13, "brains": 0, "sphereoids": 6, "quarks": 7, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 11, "enforcerShotTimer": 15, "sphereoidDropTimer": 14, "hulkSleep": 5, "brainMissileTimer": 32, "brainSleep": 6, "tankShotSteps": 30, "tankShellSpeed": 184, "quarkDropTimer": 14, "quarkSpeed": 56},
+  {"wave": 25, "grunts": 25, "electrodes": 20, "mommies": 25, "daddies": 0, "mikeys": 1, "hulks": 1, "brains": 21, "sphereoids": 1, "quarks": 0, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 11, "enforcerShotTimer": 15, "sphereoidDropTimer": 14, "hulkSleep": 5, "brainMissileTimer": 32, "brainSleep": 6, "tankShotSteps": 30, "tankShellSpeed": 184, "quarkDropTimer": 14, "quarkSpeed": 56},
+  {"wave": 26, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 0, "gruntSpeed": 14, "gruntSpeedFloor": 4, "spawnerChildren2x": 11, "enforcerShotTimer": 15, "sphereoidDropTimer": 25, "hulkSleep": 5, "brainMissileTimer": 32, "brainSleep": 6, "tankShotSteps": 30, "tankShellSpeed": 184, "quarkDropTimer": 14, "quarkSpeed": 56},
+  {"wave": 27, "grunts": 0, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 16, "brains": 0, "sphereoids": 0, "quarks": 12, "gruntSpeed": 13, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 15, "sphereoidDropTimer": 14, "hulkSleep": 5, "brainMissileTimer": 32, "brainSleep": 6, "tankShotSteps": 28, "tankShellSpeed": 184, "quarkDropTimer": 14, "quarkSpeed": 56},
+  {"wave": 28, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 1, "gruntSpeed": 13, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 15, "sphereoidDropTimer": 14, "hulkSleep": 5, "brainMissileTimer": 30, "brainSleep": 6, "tankShotSteps": 28, "tankShellSpeed": 184, "quarkDropTimer": 14, "quarkSpeed": 56},
+  {"wave": 29, "grunts": 75, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 4, "brains": 0, "sphereoids": 5, "quarks": 1, "gruntSpeed": 13, "gruntSpeedFloor": 4, "spawnerChildren2x": 11, "enforcerShotTimer": 15, "sphereoidDropTimer": 18, "hulkSleep": 5, "brainMissileTimer": 30, "brainSleep": 6, "tankShotSteps": 28, "tankShellSpeed": 184, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 30, "grunts": 25, "electrodes": 20, "mommies": 0, "daddies": 25, "mikeys": 0, "hulks": 1, "brains": 22, "sphereoids": 1, "quarks": 1, "gruntSpeed": 13, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 25, "hulkSleep": 5, "brainMissileTimer": 30, "brainSleep": 6, "tankShotSteps": 28, "tankShellSpeed": 184, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 31, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 1, "gruntSpeed": 13, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 30, "brainSleep": 6, "tankShotSteps": 28, "tankShellSpeed": 192, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 32, "grunts": 0, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 16, "brains": 0, "sphereoids": 0, "quarks": 13, "gruntSpeed": 13, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 30, "brainSleep": 6, "tankShotSteps": 26, "tankShellSpeed": 192, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 33, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 1, "gruntSpeed": 12, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 25, "brainSleep": 6, "tankShotSteps": 26, "tankShellSpeed": 192, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 34, "grunts": 30, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 25, "brains": 0, "sphereoids": 2, "quarks": 2, "gruntSpeed": 12, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 25, "brainSleep": 6, "tankShotSteps": 26, "tankShellSpeed": 192, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 35, "grunts": 27, "electrodes": 15, "mommies": 0, "daddies": 0, "mikeys": 25, "hulks": 2, "brains": 23, "sphereoids": 1, "quarks": 2, "gruntSpeed": 12, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 25, "hulkSleep": 5, "brainMissileTimer": 25, "brainSleep": 6, "tankShotSteps": 26, "tankShellSpeed": 192, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 36, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 2, "gruntSpeed": 12, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 25, "brainSleep": 6, "tankShotSteps": 26, "tankShellSpeed": 192, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 37, "grunts": 0, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 16, "brains": 0, "sphereoids": 0, "quarks": 14, "gruntSpeed": 12, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 25, "brainSleep": 6, "tankShotSteps": 24, "tankShellSpeed": 192, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 38, "grunts": 35, "electrodes": 25, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 8, "brains": 0, "sphereoids": 5, "quarks": 2, "gruntSpeed": 12, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 12, "hulkSleep": 5, "brainMissileTimer": 25, "brainSleep": 6, "tankShotSteps": 24, "tankShellSpeed": 192, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 39, "grunts": 80, "electrodes": 0, "mommies": 3, "daddies": 3, "mikeys": 3, "hulks": 6, "brains": 0, "sphereoids": 5, "quarks": 1, "gruntSpeed": 15, "gruntSpeedFloor": 4, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 18, "hulkSleep": 5, "brainMissileTimer": 25, "brainSleep": 6, "tankShotSteps": 24, "tankShellSpeed": 192, "quarkDropTimer": 14, "quarkSpeed": 60},
+  {"wave": 40, "grunts": 30, "electrodes": 15, "mommies": 10, "daddies": 10, "mikeys": 10, "hulks": 2, "brains": 25, "sphereoids": 1, "quarks": 1, "gruntSpeed": 12, "gruntSpeedFloor": 3, "spawnerChildren2x": 11, "enforcerShotTimer": 14, "sphereoidDropTimer": 20, "hulkSleep": 5, "brainMissileTimer": 25, "brainSleep": 6, "tankShotSteps": 24, "tankShellSpeed": 192, "quarkDropTimer": 14, "quarkSpeed": 60}
+ ]
+}
