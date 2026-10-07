@@ -35,6 +35,9 @@ public sealed class GameSession
         BeginWave(cp);
     }
 
+    /// Bump whenever simulation behaviour changes, so stale suspend saves are rejected rather than replayed wrongly.
+    public const int EngineVersion = 1;
+
     public GameRules Rules { get; }
     public long Score { get; private set; }
     /// Men in reserve (not counting the one in play).
@@ -183,6 +186,15 @@ public sealed class GameSession
             Count(EntityKind.Hulk), Count(EntityKind.Brain),
             Fold(Count(EntityKind.Sphereoid), Count(EntityKind.Enforcer), orig.Sphereoids),
             Fold(Count(EntityKind.Quark), Count(EntityKind.Tank), orig.Quarks));
+    }
+
+    /// Cheap fingerprint of the observable state, used to verify that a resumed replay matches.
+    public long StateHash()
+    {
+        long h = Score * 31 + Wave * 7 + Reserve * 131 + (long)Phase * 17 + PhaseFrames;
+        foreach (var e in World.Enemies) h = h * 1_000_003 + e.X * 7 + e.Y + (long)e.Kind;
+        foreach (var f in World.Family) h = h * 1_000_003 + f.X * 5 + f.Y;
+        return h ^ World.Player.X * 13 ^ (long)World.Player.Y << 20;
     }
 
     // ---------------- suspend / resume ----------------

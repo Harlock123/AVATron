@@ -20,15 +20,24 @@ public sealed class SettingsDocument : IVersionedDocument
     public PlayPreset Preset { get; set; } = PlayPreset.Classic;
     public int SaveSlot { get; set; } = 1;
 
+    // Operator adjustments (apply to both presets; arcade factory values by default)
+    public int Difficulty { get; set; } = 3;
+    public int LivesPerGame { get; set; } = 3;
+    public int ExtraLifeEvery { get; set; } = 25_000;
+
     // Audio (0..1)
     public bool AudioEnabled { get; set; } = true;
     public float MasterVolume { get; set; } = 0.8f;
     public float EffectsVolume { get; set; } = 0.9f;
     public float AmbientVolume { get; set; } = 0.6f;
+    /// Modern addition (the arcade had no background audio): a low looping hum under play.
+    public bool AmbientHum { get; set; }
 
     // Display
     public bool Fullscreen { get; set; }
     public bool IntegerScaling { get; set; } = true;
+    /// False = stretch to the arcade monitor's 4:3 shape (authentic); true = square pixels.
+    public bool SquarePixels { get; set; }
     public bool SmoothScalingInModern { get; set; }
     public bool ReducedMotion { get; set; }
     /// Modern only: suppress the hardware-flicker approximation.
@@ -60,6 +69,9 @@ public sealed class SettingsDocument : IVersionedDocument
         if (float.IsNaN(s.GamepadDeadzone) || s.GamepadDeadzone < 0 || s.GamepadDeadzone > 0.9f) return "gamepadDeadzone out of range 0..0.9";
         if (float.IsNaN(s.ModernGameSpeed) || s.ModernGameSpeed < 0.25f || s.ModernGameSpeed > 1f) return "modernGameSpeed out of range 0.25..1";
         if (s.KeyBindings is null) return "keyBindings missing";
+        if (s.Difficulty is < 0 or > 10) return "difficulty out of range 0..10";
+        if (s.LivesPerGame is < 1 or > 20) return "livesPerGame out of range 1..20";
+        if (s.ExtraLifeEvery is < 0 or > 50_000) return "extraLifeEvery out of range 0..50000";
         return null;
     }
 
