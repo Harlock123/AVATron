@@ -55,6 +55,7 @@
 | Ambient | none in the original (the "march" is the grunt-step sound) | V | optional hum | off | optional (off by default) **M** | — | — |
 | Pause / suspend | none on the arcade | — | pause menu; suspend = checkpoint plus input replay | pause only (no suspend) | pause and suspend/resume; window focus loss pauses **M** | suspend tests | — |
 | Wave progress | none | — | HUD meter **M** | off | optional | render test | — |
+| Start wave (practice) | none: games always began at wave 1 | — | title-menu choice 1–99 **M**; the chosen wave plays exactly as it would if reached normally (score 0, full reserve, that wave's effective parameters) | available; kept out of high scores | same | `StartWaveTests` | — |
 
 ## Classic vs Modern at a glance
 

@@ -49,6 +49,7 @@ internal sealed class Menus
                 var items = TitleItems(app);
                 Navigate(app, dy, items.Count);
                 if (dx != 0 && items[_cursor].Id == "mode") ToggleMode(app);
+                if (dx != 0 && items[_cursor].Id == "wave") { app.AdjustStartWave(dx); app.PlayUi(Cue.MenuMove); }
                 if (ok) Activate(app, items[_cursor].Id);
                 if (input.Pressed(InputAction.Help)) { ReturnTo = Screen.Title; app.Go(Screen.Help); }
                 break;
@@ -157,6 +158,7 @@ internal sealed class Menus
             case "start": app.StartGame(); break;
             case "resume-suspended": app.ResumeSuspended(); break;
             case "mode": ToggleMode(app); break;
+            case "wave": app.StartGame(); break;
             case "scores": ShowHighScores(app, Screen.Title); break;
             case "settings": app.Go(Screen.Settings); break;
             case "help": ReturnTo = app.Screen; app.Go(Screen.Help); break;
@@ -174,6 +176,7 @@ internal sealed class Menus
         var l = new List<MenuItem> { new("start", "START GAME") };
         if (app.SuspendAvailable) l.Add(new("resume-suspended", "RESUME SUSPENDED GAME"));
         l.Add(new("mode", $"MODE: < {(app.IsModern ? "MODERN" : "CLASSIC")} >"));
+        l.Add(new("wave", $"START WAVE: < {app.Settings.StartWave} >"));
         l.Add(new("scores", "HIGH SCORES"));
         l.Add(new("settings", "SETTINGS"));
         l.Add(new("help", "CONTROLS"));
@@ -290,7 +293,8 @@ internal sealed class Menus
         fb.TextCentered(Branding.Tagline, 42, Cyan);
         var items = TitleItems(app);
         for (int i = 0; i < items.Count; i++) Item(fb, items[i].Label, 66 + i * 12, i == _cursor);
-        string modeLine = app.IsModern ? "ANALOG AIM, NO FLICKER, PAUSE+SUSPEND" : "1982 ARCADE RULES, 8-WAY STICKS";
+        string modeLine = app.Settings.StartWave > 1 ? $"PRACTICE FROM WAVE {app.Settings.StartWave}: NO HIGH SCORES"
+            : app.IsModern ? "ANALOG AIM, NO FLICKER, PAUSE+SUSPEND" : "1982 ARCADE RULES, 8-WAY STICKS";
         fb.TextCentered(modeLine, 66 + items.Count * 12 + 6, Grey);
         fb.TextCentered($"HIGH SCORE {app.HighScores.TopScore}", 170, Yellow);
         fb.TextCentered("WASD MOVE   ARROWS FIRE   F1 HELP", 184, Green);

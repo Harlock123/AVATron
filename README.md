@@ -40,6 +40,7 @@ Command-line options for the game:
 | `--windowed` | ignore the saved fullscreen setting |
 | `--no-audio` (or `AVATRON_NO_AUDIO=1`) | don't open an audio device |
 | `--no-gamepad` | don't initialise SDL game controllers |
+| `--start-wave <1-99>` | practise from a chosen wave (same as *START WAVE* on the title menu; remembered) |
 | `--data-dir <path>` (or `AVATRON_DATA_DIR`) | store settings, scores and suspend files elsewhere |
 | `AVATRON_DEBUG_KEYS=1` | log key events to stdout |
 

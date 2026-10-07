@@ -169,7 +169,7 @@ public sealed class AppFlowTests : IDisposable
         var app = NewApp();
         var fb = new FrameBuffer(GameRenderer.Width, GameRenderer.Height);
         for (int i = 0; i < 1500; i++) { app.Advance(1 / 60.0); app.Render(fb); }   // attract cycle
-        Tap(app, Key.Down); Tap(app, Key.Down); Tap(app, Key.Down); Tap(app, Key.Enter);   // settings
+        Tap(app, Key.Down); Tap(app, Key.Down); Tap(app, Key.Down); Tap(app, Key.Down); Tap(app, Key.Enter);   // settings
         Assert.Equal(Screen.Settings, app.Screen);
         for (int i = 0; i < 25; i++) { Tap(app, Key.Down); app.Render(fb); Tap(app, Key.Right); app.Render(fb); }
         Tap(app, Key.Escape);
@@ -182,8 +182,8 @@ public sealed class AppFlowTests : IDisposable
     public void Remapping_a_key_moves_it_between_actions()
     {
         var app = NewApp();
-        // Settings -> REMAP KEYS (index 19) -> first row (MOVE UP) -> press I
-        Tap(app, Key.Down); Tap(app, Key.Down); Tap(app, Key.Down); Tap(app, Key.Enter);
+        // Settings (title row 4) -> REMAP KEYS (index 19) -> first row (MOVE UP) -> press I
+        Tap(app, Key.Down); Tap(app, Key.Down); Tap(app, Key.Down); Tap(app, Key.Down); Tap(app, Key.Enter);
         for (int i = 0; i < 19; i++) Tap(app, Key.Down);
         Tap(app, Key.Enter);
         Assert.Equal(Screen.Rebind, app.Screen);

@@ -51,6 +51,17 @@ public sealed class AppController
     public string AudioStatus { get; }
     public string? Notice { get; private set; }
     public bool IsModern => Settings.Preset == PlayPreset.Modern;
+    /// A game started past wave 1: playable as normal, but kept out of the high-score table.
+    public bool IsPractice => Session is { Rules.StartWave: > 1 };
+
+    /// Step the practice start wave, wrapping 1 <-> MaxStartWave.
+    public void AdjustStartWave(int delta)
+    {
+        int n = SettingsDocument.MaxStartWave;
+        Settings.StartWave = ((Settings.StartWave - 1 + delta) % n + n) % n + 1;
+        SaveSettings();
+    }
+
     public bool SuspendAvailable => IsModern && File.Exists(_paths.SuspendFile(Settings.SaveSlot, "modern"));
 
     public event Action<bool>? FullscreenRequested;
@@ -126,6 +137,7 @@ public sealed class AppController
         var rules = (IsModern ? GameRules.Modern : GameRules.Classic) with
         {
             Difficulty = Settings.Difficulty, LivesPerGame = Settings.LivesPerGame, ExtraLifeEvery = Settings.ExtraLifeEvery,
+            StartWave = Math.Clamp(Settings.StartWave, 1, SettingsDocument.MaxStartWave),
         };
         Session = new GameSession(rules, _table, new XorShiftRandom(_seeds()));
         _accumulator = 0;
@@ -163,7 +175,7 @@ public sealed class AppController
     {
         var g = Session!;
         SetAmbient(false);
-        if (HighScores.Qualifies(g.Score)) { _menus.BeginInitials(); Go(Screen.EnterInitials); }
+        if (!IsPractice && HighScores.Qualifies(g.Score)) { _menus.BeginInitials(); Go(Screen.EnterInitials); }
         else { LastRank = -1; Session = null; _menus.ShowHighScores(this, Screen.Title); }
     }
 
@@ -274,7 +286,10 @@ public sealed class AppController
         {
             FrameSnapshot.Fill(Session, _snapshot);
             _snapshot.HighScore = Math.Max(HighScores.TopScore, Session.Score);
-            string? note = IsModern && Settings.ModernGameSpeed < 1f ? $"SPEED {Settings.ModernGameSpeed * 100:0}%" : null;
+            var notes = new List<string>();
+            if (IsPractice) notes.Add("PRACTICE");
+            if (IsModern && Settings.ModernGameSpeed < 1f) notes.Add($"SPEED {Settings.ModernGameSpeed * 100:0}%");
+            string? note = notes.Count > 0 ? string.Join(" ", notes) : null;
             _renderer.Render(_snapshot, fb, new GameRenderOptions
             {
                 Flicker = !IsModern || !Settings.SuppressFlickerInModern,

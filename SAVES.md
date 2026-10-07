@@ -26,7 +26,7 @@ Everything is indented JSON with camelCase names, and every file has a `schemaVe
 
 | File | Version | Contents |
 |---|---|---|
-| `settings.json` | 1 | Fields: preset, slot, operator adjustments (difficulty 0–10, men 1–20, extra man 0–50,000), volumes 0–1, display flags, deadzone, Modern speed 0.25–1, key bindings `{ "MoveUp": ["W"], … }` |
+| `settings.json` | 1 | Fields: preset, slot, practice start wave 1–99, operator adjustments (difficulty 0–10, men 1–20, extra man 0–50,000), volumes 0–1, display flags, deadzone, Modern speed 0.25–1, key bindings `{ "MoveUp": ["W"], … }` |
 | `highscores-*.json` | 1 | Up to 10 entries: `{initials, score, wave, date}` |
 | `suspend-modern.json` | 1 | Fields: `engineVersion`, `saved`, `stateHash`, `state: { rules, checkpoint, inputs, ticksBeforeCheckpoint }` |
 

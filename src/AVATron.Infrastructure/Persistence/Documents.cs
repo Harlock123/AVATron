@@ -25,6 +25,10 @@ public sealed class SettingsDocument : IVersionedDocument
     public int LivesPerGame { get; set; } = 3;
     public int ExtraLifeEvery { get; set; } = 25_000;
 
+    /// Practice: wave to start new games on (1 = normal game). Games started past wave 1 don't enter the high-score table.
+    public int StartWave { get; set; } = 1;
+    public const int MaxStartWave = 99;
+
     // Audio (0..1)
     public bool AudioEnabled { get; set; } = true;
     public float MasterVolume { get; set; } = 0.8f;
@@ -72,6 +76,7 @@ public sealed class SettingsDocument : IVersionedDocument
         if (s.Difficulty is < 0 or > 10) return "difficulty out of range 0..10";
         if (s.LivesPerGame is < 1 or > 20) return "livesPerGame out of range 1..20";
         if (s.ExtraLifeEvery is < 0 or > 50_000) return "extraLifeEvery out of range 0..50000";
+        if (s.StartWave is < 1 or > MaxStartWave) return $"startWave out of range 1..{MaxStartWave}";
         return null;
     }
 

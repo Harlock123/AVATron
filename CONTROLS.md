@@ -58,6 +58,7 @@ layout.
 - `Enter` / A confirms.
 - `Esc` / B goes back.
 - On the title screen, left/right on **MODE** toggles Classic / Modern.
+- On the title screen, left/right on **START WAVE** picks the wave a new game starts on (1–99, wrapping), and `Enter` on that row starts the game. Starting past wave 1 is *practice*: the HUD shows `PRACTICE` and the score doesn't enter the high-score table.
 
 ## High-score initials
 
