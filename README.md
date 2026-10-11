@@ -44,7 +44,7 @@ Screenshots come straight from the game's renderer at 3× with the arcade's 4:3 
 |---|---|---|
 | .NET SDK | 10.0.x (validated with 10.0.400) | `global.json` pins 10.0.400, with `latestFeature` roll-forward |
 | OS | Windows 10+, Linux (X11/XWayland), macOS 12+ | Only Linux aarch64 has actually been run (see [KNOWN_ISSUES.md](KNOWN_ISSUES.md)) |
-| SDL2 | bundled | The NuGet package ships SDL2 natives for win-x64/arm64, linux-x64/arm64 and osx. Without it the game still runs, just without sound or gamepad |
+| SDL2 | bundled | The NuGet package ships SDL2 natives for win-x64/arm64, linux-x64/arm64/arm and osx. Without it the game still runs, just without sound or gamepad |
 
 ## Build, run, test
 
@@ -82,6 +82,13 @@ Every push to GitHub builds a **self-contained single-file** version for each su
 - musl-based Linux (e.g. Alpine) isn't offered, because SDL2's package has no musl build.
 - The macOS builds are a plain executable: there's no `.app` bundle and no code signing, so Gatekeeper asks you to allow them.
 - Only the linux-arm64 single file has been launched so far (Arch Linux aarch64, with audio working). The others are built by CI but haven't been run.
+
+### Linux: sound and gamepads
+
+Nothing extra to install. Sound and gamepad support (SDL2) are built into the download for every
+platform, ARM included, so you don't need `alsa-utils` (`aplay`) or a system SDL2. Sound goes
+out through whatever your desktop already runs (PipeWire, PulseAudio or ALSA); if no audio
+device can be opened the game still runs, silently. You do need an X11 or XWayland session.
 
 ## Publishing locally
 
